@@ -37,7 +37,16 @@
               @php $total = 0 @endphp
         @if(session('cart'))
             @foreach(session('cart') as $id => $details)
-                @php $total += $details['price'] * $details['quantity'] @endphp
+                @php 
+
+                if($details['discount']!=null){
+                  $total += $details['discount'] * $details['quantity'];
+                }else{
+                  $total += $details['price'] * $details['quantity'];
+                }
+                
+              
+                @endphp
                 <tr>
                   <td>
                     <div class="media">
@@ -56,6 +65,12 @@
                         <button class="btn btn-danger btn-sm me-1 mb-2 cart_remove"><i class="fas fa-trash"></i></button>
                     </td>
                 </tr>
+
+                @php
+               
+                
+                
+                @endphp
               </table>
                 <!--Delete button -->
                       </div>
@@ -63,9 +78,18 @@
                   </td>
                   <td>
                     <!--test-->
-                    
+                    <!-- <h2>$149.99</h2> -->
+              <div class="mt-3 d-flex">
+                 @if ($details['discount']!=null)                             
+                <h2 class="mr-4"> ${{ $details['discount']}}</h2>       
+                <del style="display:none;">${{$details['price']}}</del>
+                @else
+                <h2 class="mr-4">${{$details['price']}}</h2>
+                @endif
+                </div>
                     <!--test-->
-                    <h5>${{ $details['price'] }}</h5>
+                    <!-- <h5>${{ $details['price'] }}</h5>
+                     -->
                   </td>
                   <td>
                     <div class="product_count">
@@ -83,7 +107,11 @@
                     </div>
                   </td>
                   <td>
+                  @if ($details['discount']!=null)  
+                  <h5>${{ $details['discount'] * $details['quantity'] }}</h5>
+                  @else
                     <h5>${{ $details['price'] * $details['quantity'] }}</h5>
+                    @endif
                   </td>
                 </tr>
 

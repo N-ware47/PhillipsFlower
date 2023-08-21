@@ -102,12 +102,12 @@
               <div class="mt-3 d-flex">
                  @if ($product->discount_price!=null)                             
                 <h2 class="mr-4"> ${{$product->discount_price}}</h2>       
-                <del>${{$product->price}}</del>
+                <del style="display:none;">${{$product->price}}</del>
                 @else
-                <span class="mr-4">${{$product->price}}</span>
+                <h2 class="mr-4">${{$product->price}}</h2>
                 @endif
                 </div>
-             
+              
               <!--pricec-->
               
               <ul class="list">

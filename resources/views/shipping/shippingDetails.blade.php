@@ -33,14 +33,29 @@
       @php $total = 0 @endphp
         @if(session('cart'))
             @foreach(session('cart') as $id => $details)
-                @php $total += $details['price'] * $details['quantity'] @endphp
+                @php
+                if($details['discount']!=null){
+                  $total += $details['discount'] * $details['quantity'];
+                }else{
+                  $total += $details['price'] * $details['quantity'];
+                }
+                 
+                 @endphp
     
         <li class="list-group-item d-flex justify-content-between lh-condensed">
           <div>
             <h6 class="my-0">{{ $details['product_name'] }}</h6>
             <small class="text-muted color:#71cd14;">Quantity: <span style="color:#71cd14;">{{ $details['quantity']}}</span></small>
           </div>
-          <span class="text-muted">${{ $details['price'] * $details['quantity'] }}</span>
+          
+             <!--test-->
+             @if ($details['discount']!=null)  
+             <span class="text-muted">${{ $details['discount'] * $details['quantity'] }}</span>
+                  @else
+                  <span class="text-muted">${{ $details['price'] * $details['quantity'] }}</span>
+                    @endif
+                    <!--test--> 
+                      <!-- <span class="text-muted"> ${{ $details['price'] * $details['quantity'] }}</span> -->
         </li>
         @endforeach
       @endif

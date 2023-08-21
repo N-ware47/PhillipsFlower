@@ -69,7 +69,7 @@
                         @if ($product->discount_price!=null)
                                     
                         <span class="mr-4"> ${{$product->discount_price}}</span>       
-                        <del>${{$product->price}}</del>
+                        <del style="display:none;">${{$product->price}}</del>
                         @else
                         <span class="mr-4">${{$product->price}}</span>
                         @endif

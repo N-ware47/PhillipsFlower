@@ -55,13 +55,30 @@ public function session(Request $request)
 
     foreach (session('cart') as $id => $details) {
 
-        $product_name = $details['product_name'];
+ $product_name = $details['product_name'];
         $total = $details['price'];
         $quantity = $details['quantity'];
-
-        $two0 = "00";
+        $discount = $details['discount'];
+  $two0 = "00";
         $unit_amount = "$total$two0";
-
+        $unit_amountdiscount = "$discount$two0";
+        if($details['discount']!=null){
+            /*test*/
+            $quantity = $details['quantity'];
+        $productItems[] = [
+            'price_data' => [
+                'product_data' => [
+                    'name' => $product_name,
+                ],
+                'currency'     => 'USD',
+                'unit_amount'  => $unit_amountdiscount,
+            ],
+            'quantity' => $quantity
+        ]; 
+            /*test*/
+          }else{
+           /*test*/
+           $quantity = $details['quantity'];
         $productItems[] = [
             'price_data' => [
                 'product_data' => [
@@ -72,6 +89,24 @@ public function session(Request $request)
             ],
             'quantity' => $quantity
         ]; 
+           /*test*/
+          }
+
+       
+        
+        // $two0 = "00";
+        // $unit_amount = "$total$two0";
+
+        // $productItems[] = [
+        //     'price_data' => [
+        //         'product_data' => [
+        //             'name' => $product_name,
+        //         ],
+        //         'currency'     => 'USD',
+        //         'unit_amount'  => $unit_amount,
+        //     ],
+        //     'quantity' => $quantity
+        // ]; 
 
     
 

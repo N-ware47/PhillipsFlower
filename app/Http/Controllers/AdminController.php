@@ -120,11 +120,14 @@ public function addCartQuanty( Request $request,$id){
         $cart[$id] = [
             "product_name" => $product->product_name,
             "photo" => $product->image,
-            "price" => $product->discount_price,
+            "price" => $product->price,
             "productId" => $id,
+            "discount" => $product->discount_price,
             "quantity" => $request->qunty,
         ];
     }
+
+
     session()->put('cart', $cart);
     return redirect()->back()->with('success', 'Proceed to cart - "Click The Icon"');   
 }
