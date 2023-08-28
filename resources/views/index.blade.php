@@ -1,5 +1,5 @@
 
-
+@php use App\Models\PostBlog; @endphp
 @include ('header')
 
 
@@ -25,6 +25,17 @@
   </section>
 
 
+  @php $blog=PostBlog::all(); $test = "wee"; @endphp
+  @foreach($blog as $blog)
+  <div class="card" style="width: 18rem;">
+  <img src="/Featureimg/{{$blog->feature_image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{$blog->blog_title}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+@endforeach
   
 
 @include ('footer')

@@ -125,3 +125,19 @@ Route::get('mailsend', function () {
 
 
 });
+
+
+/**post Page */
+
+Route::get('/post',[AdminController::class,'post']);
+Route::get('/CreateBlog',[AdminController::class,'CreateBlog']);
+Route::get('/blog',[AdminController::class,'blog']);
+
+
+
+Route::POST('/create_Blog',[AdminController::class,'create_Blog'])->name('blog');
+
+Route::get('/singleBLog/{id}',[AdminController::class,'singleBLog']);
+
+
+/**post Page */

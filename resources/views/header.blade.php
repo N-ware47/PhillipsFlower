@@ -44,8 +44,8 @@
         <div class="row">
           <div class="col-lg-7">
             <div class="float-left">
-              <p>Phone: +01 256 25 235</p>
-              <p>email: info@eiser.com</p>
+              <p>Phone: 1-800-356-7257</p>
+              <p>email: PhillipsFlower@gmail.com</p>
             </div>
           </div>
           <div class="col-lg-5">
@@ -98,16 +98,7 @@
     
                   </li>
                   <li class="nav-item submenu dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                      aria-expanded="false">Blog</a>
-                    <ul class="dropdown-menu">
-                      <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="single-blog.html">Blog Details</a>
-                      </li>
-                    </ul>
+                    <a href="{{ url('/blog') }}" class="nav-link dropdown-toggle">Blogs</a>
                   </li>
                   <li class="nav-item submenu dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"

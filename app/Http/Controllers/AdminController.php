@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\insertProduct;
 use App\Models\ShippingDetails;
+use App\Models\PostBlog;
 use Notification;
 
 
@@ -265,6 +266,64 @@ public function mailsend(){
        Mail::to("nnware6@gmail.com")->send(new OrderEmail($OrderMailData));
     
 }
+
+
+/** Post Page */
+
+public function post(){
+
+
+
+    return view('blog.post');
+}
+
+public function CreateBlog(){
+    return view('blog.createPost');
+}
+
+
+public function blog(){
+
+    $blog=PostBlog::all();
+    return view('blog.blog', compact('blog'));
+}
+
+
+public function create_Blog(Request $request){
+
+    $blog= new PostBlog;
+
+
+
+
+
+    $blog->blog_title=$request->blog_title;
+    $blog->blog_description=$request->blog_description;
+        $blog->blog_category=$request->blog_categories;
+
+    $image=$request->feature_image;
+
+    $imagename=time().'.'.$image->getClientOriginalExtension();
+
+    $request->feature_image->move('FeatureImg',$imagename);
+
+    $blog->feature_image=$imagename;
+    $blog->save();
+
+     return redirect()->back();
+}
+
+
+
+public function singleBLog($id){
+
+
+    $blog=PostBlog::find($id);
+    // dd($product);
+    return view('blog.singlepage', compact('blog'));
+}
+
+/** Post Page */
 
 
 

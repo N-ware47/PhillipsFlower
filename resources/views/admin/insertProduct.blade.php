@@ -24,7 +24,11 @@
 
 
 
+@if(Auth::User()->email !== "admin@gmail.com")
+        @php return back(); @endphp
 
+
+        @else
 
 <div class="container">
     
@@ -88,3 +92,6 @@
 
 </body>
 </html>
+
+
+@endif
