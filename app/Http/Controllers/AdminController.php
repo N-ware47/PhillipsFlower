@@ -278,7 +278,17 @@ public function post(){
 }
 
 public function CreateBlog(){
-    return view('blog.createPost');
+
+    if(Auth::id()){
+        return view('blog.createPost');
+        
+    }else{
+     
+        return redirect()->guest(route('login'));
+      
+    }
+
+   
 }
 
 

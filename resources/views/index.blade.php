@@ -44,6 +44,8 @@
     <div class="row">
       <div class="col ">
         <h1 class="h1 text-center">Blog</h1>
+        
+       
 
         <button type="button" class="btn btn-secondary d-flex justify-content-center">
           <a href="{{url('/CreateBlog')}}" style="color:#fff;">
@@ -59,6 +61,17 @@
 </div>
 
 
+<div class="container text-center d-flex flex-column">
+<h4>Instruction</h4>
+        <p>
+                Log IN
+          <br>
+          log in:
+          Email:<b>admin@gmail.com </b>
+          <br>
+          Password:<b>admin@gmail.com </b>
+        </p>
+</div>
 
 
 
