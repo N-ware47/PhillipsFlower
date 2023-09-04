@@ -61,9 +61,9 @@
                         <div class="blog_item_img">
                           <a href="{{url('singleBLog',$blog->id)}}">
 
-
-                       
-                          <img class="card-img rounded-0" src="/Featureimg/{{$blog->feature_image}}" alt="">  
+                          
+                        
+                          <img class="card-img rounded-0" src="{{ asset('/Featureimg/'.$blog->feature_image) }}" alt="">  
                          </a>
                           <a href="#" class="blog_item_date">
                             <h3>Phillips</h3>
@@ -178,7 +178,7 @@
                           @php $blog=PostBlog::all(); $test = "wee"; @endphp
                             @foreach($blog as $blog)
                           <div class="media post_item">
-                              <img  src="/Featureimg/{{$blog->feature_image}}" class="card-img-top-recent" style="width: 73px;" alt="post">
+                              <img  src="{{ asset('/Featureimg/'.$blog->feature_image) }}" class="card-img-top-recent" style="width: 73px;" alt="post">
                               <div class="media-body">
                                   <a href="single-blog.html">
                                       <h3>{{$blog->blog_title}}</h3>
