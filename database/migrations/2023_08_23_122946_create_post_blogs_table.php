@@ -19,6 +19,7 @@ class CreatePostBlogsTable extends Migration
             $table->string('blog_title')->nullable();
             $table->text('blog_description')->nullable();
             $table->string('feature_image')->nullable();
+            $table->string('blog_tags')->nullable();
             $table->string('blog_category')->nullable();
             $table->timestamps();
         });

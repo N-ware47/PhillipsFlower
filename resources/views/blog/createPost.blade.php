@@ -13,12 +13,18 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <!--Boostrap Script-->
-    <title>ADD NEW PRODUCT</title>
+    <title>Post</title>
 </head>
 <body>
 
-<h1 class="text-center">ADD New Product</h1>
-    
+<h1 class="text-center">Create Post</h1>
+
+<div class="container d-flex justify-content-center">
+<button type="button" class="btn btn-secondary d-flex justify-content-center">
+<a href="{{ url('/blog') }}" class="nav-link " style="color:#fff;">View Blogs</a>
+ </button>
+</div>
+
 
 
 
@@ -38,8 +44,14 @@
     <label for="exampleInputEmail1" class="form-label">Blog Title</label>
     <input type="text" name="blog_title" class="form-control" id="blog_title" aria-describedby="emailHelp">
 
+    <label for="exampleInputEmail1" class="form-label">Blog Tags</label>
+    <input type="text" name="blog_tag" class="form-control" id="blog_title" aria-describedby="emailHelp">
+
     <label for="exampleInputEmail1" class="form-label">Blog Description</label>
-    <input type="text" name="blog_description" class="form-control" id="blog_description" aria-describedby="emailHelp">
+    <!-- <input type="text" name="blog_description" class="form-control" id="blog_description" aria-describedby="emailHelp"> -->
+    <br/>
+    <textarea id="w3review" name="blog_description" rows="4" cols="50">At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.</textarea>
+    
 
     
    

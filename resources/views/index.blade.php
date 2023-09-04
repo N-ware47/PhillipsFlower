@@ -3,7 +3,7 @@
 @include ('header')
 
 
-
+<!-- 
 
 <section class="home_banner_area mb-40">
     <div class="banner_inner d-flex align-items-center">
@@ -35,7 +35,35 @@
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
-@endforeach
+@endforeach -->
+
+
+
+<div class="hero">
+  <div class="container d-flex justify-content-center p-5">
+    <div class="row">
+      <div class="col ">
+        <h1 class="h1 text-center">Blog</h1>
+
+        <button type="button" class="btn btn-secondary d-flex justify-content-center">
+          <a href="{{url('/CreateBlog')}}" style="color:#fff;">
+          Crete New Post 
+        </a>
+        </button>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
   
+
 
 @include ('footer')

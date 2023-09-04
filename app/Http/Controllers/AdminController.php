@@ -298,6 +298,7 @@ public function create_Blog(Request $request){
 
 
     $blog->blog_title=$request->blog_title;
+    $blog->blog_tags=$request->blog_tag;
     $blog->blog_description=$request->blog_description;
         $blog->blog_category=$request->blog_categories;
 
