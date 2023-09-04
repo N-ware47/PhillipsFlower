@@ -43,7 +43,7 @@
 							<div class="col-lg-8 posts-list ">
 									<div class="single-post">
 													<div class="feature-img shadow-sm p-3 mb-5 bg-body rounded">
-															<img class="img-fluid" src="{{ asset('/Featureimg/'.$blog->feature_image) }}" alt="">
+															<img class="img-fluid" src="{{ asset('/FeatureImg/'.$blog->feature_image) }}" alt="">
 													</div>
 											<div class="blog_details">
 													<h2>{{$blog->blog_title}}</h2>
@@ -163,7 +163,7 @@
                             @php $blog=PostBlog::all(); $test = "wee"; @endphp
                             @foreach($blog as $blog)
                           <div class="media post_item">
-                              <img  src="{{ asset('/Featureimg/'.$blog->feature_image) }}" class="card-img-top-recent" style="width: 73px;" alt="post">
+                              <img  src="{{ asset('/FeatureImg/'.$blog->feature_image) }}" class="card-img-top-recent" style="width: 73px;" alt="post">
                               <div class="media-body">
                                   <a href="single-blog.html">
                                       <h3>{{$blog->blog_title}}</h3>
