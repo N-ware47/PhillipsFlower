@@ -50,7 +50,7 @@
     <label for="exampleInputEmail1" class="form-label">Blog Description</label>
     <!-- <input type="text" name="blog_description" class="form-control" id="blog_description" aria-describedby="emailHelp"> -->
     <br/>
-    <textarea id="w3review" name="blog_description" rows="4" cols="50">At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.</textarea>
+    <textarea id="w3review" name="blog_description" rows="4" cols="50">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</textarea>
     
 
     
