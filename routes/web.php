@@ -140,4 +140,12 @@ Route::POST('/create_Blog',[AdminController::class,'create_Blog'])->name('blog')
 Route::get('/singleBLog/{id}',[AdminController::class,'singleBLog']);
 
 
+
 /**post Page */
+
+
+
+/*delivery*/
+Route::get('/deliverypagelink',[AdminController::class,'deliverypagelink'])->name('deliverypagelink');
+Route::post('/delivery', [AdminController::class, 'delivery'])->name('delivery');
+/*end delivery*/

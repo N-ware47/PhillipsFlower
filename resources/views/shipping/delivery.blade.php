@@ -95,96 +95,39 @@
 
 
     <div class="col-md-8 order-md-1">
-      <h4 class="mb-3">Billing address</h4>
-      <form  action="{{url('/shippingDetailstest')}}" method="POST" enctype="multipart/form-data">
+      <h4 class="mb-3">Delivery Address</h4>
+      <form  action="{{url('/delivery')}}" method="POST" enctype="multipart/form-data">
       @csrf
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="firstName">First name</label>
-            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="" required="">
+            <label for="firstName">Name</label>
+            <input type="text" class="form-control" name="deliveryName" id="deliveryName" placeholder="" value="" required="">
             <div class="invalid-feedback">
-              Valid first name is required.
+              Valid Name is required.
             </div>
           </div>
           <div class="col-md-6 mb-3">
-            <label for="lastName">Last name</label>
-            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="" required="">
+            <label for="delivery_address">Address</label>
+            <input type="text" class="form-control" name="delivery_address" id="delivery_address" placeholder="" value="" required="">
             <div class="invalid-feedback">
-              Valid last name is required.
+              Valid delivery_address is required.
             </div>
           </div>
         </div>
 
         <div class="mb-3">
-          <label for="companyName">Company Name <span class="text-muted">(Optional)</span></label>
+          <label for="Special_Message">Special Message <span class="text-muted">(Optional)</span></label>
           <div class="input-group">
             <div class="input-group-prepend">
             </div>
-            <input type="text" class="form-control" name="companyName" id="companyName" placeholder="" required="">
+            <input type="text" class="form-control" name="Special_Message" id="Special_Message" placeholder="" required="">
             <div class="invalid-feedback" style="width: 100%;">
-            companyName is Optional.
+            Special Message is Optional.
             </div>
           </div>
         </div>
 
-        <div class="mb-3">
-          <label for="email">Email <span class="text-muted">(Optional)</span></label>
-          <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" required="">
-          <div class="invalid-feedback">
-            Please enter a valid email address for shipping updates.
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="address">Address</label>
-          <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" required="">
-          <div class="invalid-feedback">
-            Please enter your shipping address.
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-          <input type="text" class="form-control" name="address2" id="address2" placeholder="Apartment or suite">
-        </div>
-
-
-        <div class="mb-3">
-          <label for="address2">Special Product <span class="text-muted">(Optional)</span></label>
-          <input type="text" class="form-control" name="address2" id="address2" placeholder="Apartment or suite">
-        </div>
-s
-        <div class="row">
-          <div class="col-md-5 mb-3">
-            <label for="country">Country</label>
-            <input type="text" class="form-control" name="country" id="country" placeholder="" required="">
-            <div class="invalid-feedback">
-              Please select a valid country.
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="state">State</label>
-            <input type="text" class="form-control" name="state" id="state" placeholder="" required="">
-            <div class="invalid-feedback">
-              Please provide a valid state.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="zip">Zip</label>
-            <input type="text" class="form-control" name="zip" id="zip" placeholder="" required="">
-            <div class="invalid-feedback">
-              Zip code required.
-            </div>
-          </div>
-
-          <div class="col-md-3 mb-3">
-            <label for="phoneNUmber">Phone Number</label>
-            <input type="tel" class="form-control" name="phoneNUmber" id="phoneNUmber" placeholder="" required="">
-            <div class="invalid-feedback">
-             Phone Number required
-            </div>
-          </div>
-        </div>
+      
         <hr class="mb-4">
 
         <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>

@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\insertProduct;
 use App\Models\ShippingDetails;
+use App\Models\delivery;
 use App\Models\PostBlog;
 use Notification;
-
 
 use App\Notifications\OrderNotification;
 
@@ -337,6 +337,52 @@ public function singleBLog($id){
 /** Post Page */
 
 
+
+/*delivery*/
+
+public function deliverypagelink(){
+    return view('shipping.delivery');
+}
+
+public function deliveryPage(){
+    return view ('shipping.delivery');
+}
+
+
+
+public function delivery(Request $request){
+    $delivery = new delivery;
+    
+   
+    
+    $delivery->delivery_name=$request->deliveryName;
+    $delivery->delivery_address=$request->delivery_address;
+    $delivery->delivery_special_message	=$request->Special_Message;
+       
+    $delivery->save();
+
+    
+
+    $user = Auth::User()->name;
+ 
+ // $shippingData->save();
+ $OrderMailData =[
+    'user' => $user,
+    'deliveryName' => $request->deliveryName,
+    'delivery_address' => $request->delivery_address,
+    'Special_Message' => $request->Special_Message,
+   ];  
+  
+   Mail::to("nnware6@gmail.com")->send(new OrderEmail($OrderMailData));
+// return view('Shipping.shippingDetails');
+return view('ShopPage.payment');
+
+       
+    
+}
+
+
+/*end delivery*/
 
 
 

@@ -48,7 +48,7 @@
                       />
                       <div class="p_icon">
                         <a href="{{url('product-details',$product->id)}}">
-                          <i style=" top: 10px !important; position: relative;" class="ti-eye"></i>
+                          <i style=" top: 10px !important; position: relative;" class="ti-shopping-cart"></i>
                         </a>
                         <a href="{{url('singlepage')}}">
                           <i  style=" top: 10px !important;position: relative;" class="ti-heart"></i>

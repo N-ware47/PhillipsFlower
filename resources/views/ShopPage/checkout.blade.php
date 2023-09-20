@@ -135,12 +135,24 @@
                   <td>
                     <div class="checkout_btn_inner">
                       <a class="gray_btn" href="#">Continue Shopping</a>
+                    
                       <!-- <a class="main_btn" href="#">Proceed to checkout</a> -->
                       <form action="/checkout" method="POST">
                       <input type="hidden" name="_token" value="{{csrf_token()}}">
-                      <button class="btn  btn-lg btn-block main_btn" type="submit" id="checkout-live-button">Proceed to checkout</button>
+                      <button class="btn  btn-lg btn-block main_btn" type="submit" id="checkout-live-button">shipping</button>
                       </form>
+                      <!-- <form action="/delivery" method="POST">
+                      <input type="hidden" name="_token" value="{{csrf_token()}}">
+                      <button class="btn  btn-lg btn-block main_btn" type="submit" id="checkout-live-button">Deliver</button>
+                      </form> -->
+
+
+                      <a href="{{ route('deliverypagelink') }}"> Deliver Page</a>
+
+
+
                     </div>
+                    
                     @else
                 <div>   <a class="nav-link navHover" href="{{ url('/product-shop') }}" style="color:#71cd14;"><h1 class="text-center" style="color:#71cd14;">Your cart is empty.</a></div>
                 <!-- Checking iF there is cart -->
