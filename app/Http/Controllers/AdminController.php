@@ -361,19 +361,18 @@ public function delivery(Request $request){
        
     $delivery->save();
 
-    
 
-    $user = Auth::User()->name;
+//     $user = Auth::User()->name;
  
- // $shippingData->save();
- $OrderMailData =[
-    'user' => $user,
-    'deliveryName' => $request->deliveryName,
-    'delivery_address' => $request->delivery_address,
-    'Special_Message' => $request->Special_Message,
-   ];  
+//  
+//  $OrderMailData =[
+//     'user' => $user,
+//     'deliveryName' => $request->deliveryName,
+//     'delivery_address' => $request->delivery_address,
+//     'Special_Message' => $request->Special_Message,
+//    ];  
   
-   Mail::to("nnware6@gmail.com")->send(new OrderEmail($OrderMailData));
+//    Mail::to("nnware6@gmail.com")->send(new OrderEmail($OrderMailData));
 // return view('Shipping.shippingDetails');
 return view('ShopPage.payment');
 

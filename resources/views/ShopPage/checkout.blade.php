@@ -134,12 +134,12 @@
                   <td></td>
                   <td>
                     <div class="checkout_btn_inner">
-                      <a class="gray_btn" href="#">Continue Shopping</a>
+                      <a class="gray_btn" href="{{ url('/product-shop') }}">Continue Shopping</a>
                     
                       <!-- <a class="main_btn" href="#">Proceed to checkout</a> -->
                       <form action="/checkout" method="POST">
                       <input type="hidden" name="_token" value="{{csrf_token()}}">
-                      <button class="btn  btn-lg btn-block main_btn" type="submit" id="checkout-live-button">shipping</button>
+                      <button class="btn  btn-lg btn-block main_btn" type="submit" id="checkout-live-button">Shipping To</button>
                       </form>
                       <!-- <form action="/delivery" method="POST">
                       <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -147,7 +147,7 @@
                       </form> -->
 
 
-                      <a href="{{ route('deliverypagelink') }}"> Deliver Page</a>
+                      <a class="btn  btn-lg btn-block main_btn" href="{{ route('deliverypagelink') }}"> Deliver To</a>
 
 
 
